@@ -1,0 +1,9 @@
+{
+  "name": "Vrai — Vérifier une vidéo",
+  "short_name": "Vrai",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0f1c",
+  "theme_color": "#0c0f1c",
+  "lang": "fr"
+}
