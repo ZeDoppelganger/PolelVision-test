@@ -1,6 +1,6 @@
 {
-  "name": "Vrai — Vérifier une vidéo",
-  "short_name": "Vrai",
+  "name": "PolelVision — Vérifier une vidéo",
+  "short_name": "PolelVision",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0c0f1c",
