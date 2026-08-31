@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0d1020" />
+    <title>Vrai — Vérifier une vidéo</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="phone-shell">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">✓</span><span>vrai</span></div>
+        <button class="icon-button" id="infoButton" aria-label="À propos">i</button>
+      </header>
+
+      <section id="homeView" class="view active" aria-labelledby="heroTitle">
+        <div class="hero">
+          <p class="eyebrow">AUTHENTICITÉ VIDÉO</p>
+          <h1 id="heroTitle">Ce que vous regardez est-il <em>vrai</em> ?</h1>
+          <p class="subcopy">Vérifiez en quelques secondes si une vidéo semble avoir été créée ou modifiée par l’IA.</p>
+        </div>
+
+        <section class="scan-card" aria-label="Lancer une vérification">
+          <div class="scan-art" aria-hidden="true"><span class="orb"></span><span class="scan-line"></span></div>
+          <h2>Analyser une vidéo</h2>
+          <p>Collez un lien depuis TikTok, Instagram ou X.</p>
+          <label class="url-input"><span>↗</span><input id="videoUrl" inputmode="url" autocomplete="url" placeholder="Coller le lien de la vidéo" /></label>
+          <button class="primary-button" id="scanButton">Vérifier la vidéo <span>→</span></button>
+          <div class="divider"><span>ou</span></div>
+          <button class="upload-button" id="uploadButton"><span>＋</span> Importer une vidéo</button>
+          <input id="fileInput" type="file" accept="video/*" hidden />
+        </section>
+
+        <section class="trust-note">
+          <span class="lock">⌁</span>
+          <p>Vos vidéos ne sont jamais publiées. Elles sont analysées de façon sécurisée.</p>
+        </section>
+
+        <section class="how-it-works">
+          <p class="eyebrow">COMMENT ÇA MARCHE</p>
+          <div class="steps">
+            <article><span>01</span><h3>Envoyez</h3><p>Un lien ou une vidéo</p></article>
+            <article><span>02</span><h3>Analyse</h3><p>Signaux visuels et audio</p></article>
+            <article><span>03</span><h3>Comprenez</h3><p>Un résultat clair</p></article>
+          </div>
+        </section>
+      </section>
+
+      <section id="scanningView" class="view scanning-view" aria-live="polite">
+        <button class="back-button" data-go-home>‹ Retour</button>
+        <div class="progress-art"><div class="rotating-ring"></div><div class="progress-center">✓</div></div>
+        <p class="eyebrow">ANALYSE EN COURS</p>
+        <h1>Nous cherchons les indices.</h1>
+        <p id="scanStatus">Extraction des images clés…</p>
+        <div class="progress-track"><div id="progressFill"></div></div>
+        <p class="percent" id="percent">8 %</p>
+        <div class="signals"><span>◌ Métadonnées</span><span>◌ Visuels</span><span>◌ Audio</span></div>
+      </section>
+
+      <section id="resultView" class="view result-view" aria-live="polite">
+        <button class="back-button" data-go-home>‹ Nouvelle vérification</button>
+        <p class="eyebrow">RÉSULTAT DE L’ANALYSE</p>
+        <h1 id="resultTitle">La vidéo semble <em>authentique</em>.</h1>
+        <div class="score-card">
+          <div class="score-circle"><span id="scoreValue">84</span><small>/100</small></div>
+          <div><p class="score-label" id="scoreLabel">Indice d’authenticité élevé</p><p class="score-detail" id="scoreDetail">Peu de signaux associés à une génération par IA ont été détectés.</p></div>
+        </div>
+        <section class="finding-section"><h2>Ce que nous avons trouvé</h2><div id="findings" class="findings"></div></section>
+        <p class="disclaimer">Ce résultat est une estimation, pas une preuve définitive. Vérifiez toujours la source avant de partager.</p>
+        <button class="primary-button" id="shareButton">Partager le résultat <span>↗</span></button>
+      </section>
+      <div id="toast" role="status"></div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
