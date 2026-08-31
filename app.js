@@ -43,5 +43,5 @@ videoUrl.addEventListener('keydown', event => { if (event.key === 'Enter') start
 uploadButton.addEventListener('click', () => fileInput.click());
 fileInput.addEventListener('change', () => { if (fileInput.files[0]) { videoUrl.value = ''; notify(`« ${fileInput.files[0].name} » est prête à être analysée.`); } });
 document.querySelectorAll('[data-go-home]').forEach(button => button.addEventListener('click', () => showView('homeView')));
-document.querySelector('#shareButton').addEventListener('click', async () => { const shareData = { title:'Vrai — analyse vidéo', text:'J’ai vérifié cette vidéo avec Vrai.' }; try { if (navigator.share) await navigator.share(shareData); else { await navigator.clipboard.writeText(shareData.text); notify('Le résultat a été copié.'); } } catch (_) {} });
+document.querySelector('#shareButton').addEventListener('click', async () => { const shareData = { title:'PolelVision — analyse vidéo', text:'J’ai vérifié cette vidéo avec PolelVision.' }; try { if (navigator.share) await navigator.share(shareData); else { await navigator.clipboard.writeText(shareData.text); notify('Le résultat a été copié.'); } } catch (_) {} });
 document.querySelector('#infoButton').addEventListener('click', () => notify('Vrai évalue des signaux : il ne remplace pas la vérification des sources.'));
